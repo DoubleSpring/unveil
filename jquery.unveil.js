@@ -15,13 +15,13 @@
     var $w = $(window),
         th = threshold || 0,
         retina = window.devicePixelRatio > 1,
-        attrib = retina? "data-src-retina" : "data-src",
+        attrib = retina? "data-src-retina" : "data-un",
         images = this,
         loaded;
 
     this.one("unveil", function() {
       var source = this.getAttribute(attrib);
-      source = source || this.getAttribute("data-src");
+      source = source || this.getAttribute("data-un");
       if (source) {
         this.setAttribute("src", source);
         if (typeof callback === "function") callback.call(this);
